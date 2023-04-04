@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct Emre_NoteApp: App {
-    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
+            let dateHolder = DateHolder()
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(dateHolder)
         }
     }
 }

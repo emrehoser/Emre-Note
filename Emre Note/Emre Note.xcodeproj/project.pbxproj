@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AE5621C29AFD49F004A9BFB /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5621B29AFD49F004A9BFB /* DateHolder.swift */; };
+		1AE5621E29AFD623004A9BFB /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5621D29AFD623004A9BFB /* DateScrollerView.swift */; };
 		1AF6A6AC29AE632E008B1C48 /* Emre_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6A6AB29AE632E008B1C48 /* Emre_NoteApp.swift */; };
-		1AF6A6AE29AE632E008B1C48 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6A6AD29AE632E008B1C48 /* Persistence.swift */; };
 		1AF6A6B129AE632E008B1C48 /* Emre_Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6A6AF29AE632E008B1C48 /* Emre_Note.xcdatamodeld */; };
 		1AF6A6B329AE632E008B1C48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF6A6B229AE632E008B1C48 /* ContentView.swift */; };
 		1AF6A6B529AE632E008B1C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6A6B429AE632E008B1C48 /* Assets.xcassets */; };
 		1AF6A6B929AE632E008B1C48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF6A6B829AE632E008B1C48 /* Preview Assets.xcassets */; };
+		1AF7800E29B3E224002CD28E /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7800D29B3E224002CD28E /* CalendarHelper.swift */; };
+		1AF7801029B3E78A002CD28E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7800F29B3E78A002CD28E /* CalendarCell.swift */; };
+		1AF7801229B3E863002CD28E /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7801129B3E863002CD28E /* MonthStruct.swift */; };
+		1AF7801629B78743002CD28E /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7801529B78743002CD28E /* NoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AE5621B29AFD49F004A9BFB /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
+		1AE5621D29AFD623004A9BFB /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
 		1AF6A6A829AE632E008B1C48 /* Emre Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emre Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF6A6AB29AE632E008B1C48 /* Emre_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emre_NoteApp.swift; sourceTree = "<group>"; };
-		1AF6A6AD29AE632E008B1C48 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1AF6A6B029AE632E008B1C48 /* Emre_Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Emre_Note.xcdatamodel; sourceTree = "<group>"; };
 		1AF6A6B229AE632E008B1C48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1AF6A6B429AE632E008B1C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF6A6B629AE632E008B1C48 /* Emre_Note.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Emre_Note.entitlements; sourceTree = "<group>"; };
 		1AF6A6B829AE632E008B1C48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1AF7800D29B3E224002CD28E /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		1AF7800F29B3E78A002CD28E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		1AF7801129B3E863002CD28E /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
+		1AF7801529B78743002CD28E /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				1AF6A6AB29AE632E008B1C48 /* Emre_NoteApp.swift */,
-				1AF6A6AD29AE632E008B1C48 /* Persistence.swift */,
+				1AF7800D29B3E224002CD28E /* CalendarHelper.swift */,
+				1AE5621B29AFD49F004A9BFB /* DateHolder.swift */,
+				1AE5621D29AFD623004A9BFB /* DateScrollerView.swift */,
+				1AF7801529B78743002CD28E /* NoteView.swift */,
+				1AF7800F29B3E78A002CD28E /* CalendarCell.swift */,
 				1AF6A6B229AE632E008B1C48 /* ContentView.swift */,
+				1AF7801129B3E863002CD28E /* MonthStruct.swift */,
 				1AF6A6B429AE632E008B1C48 /* Assets.xcassets */,
 				1AF6A6B629AE632E008B1C48 /* Emre_Note.entitlements */,
 				1AF6A6AF29AE632E008B1C48 /* Emre_Note.xcdatamodeld */,
@@ -146,9 +161,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF6A6AC29AE632E008B1C48 /* Emre_NoteApp.swift in Sources */,
-				1AF6A6AE29AE632E008B1C48 /* Persistence.swift in Sources */,
+				1AF7801029B3E78A002CD28E /* CalendarCell.swift in Sources */,
+				1AF7800E29B3E224002CD28E /* CalendarHelper.swift in Sources */,
+				1AE5621E29AFD623004A9BFB /* DateScrollerView.swift in Sources */,
+				1AE5621C29AFD49F004A9BFB /* DateHolder.swift in Sources */,
 				1AF6A6B329AE632E008B1C48 /* ContentView.swift in Sources */,
 				1AF6A6B129AE632E008B1C48 /* Emre_Note.xcdatamodeld in Sources */,
+				1AF7801229B3E863002CD28E /* MonthStruct.swift in Sources */,
+				1AF7801629B78743002CD28E /* NoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +307,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
@@ -325,7 +345,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;

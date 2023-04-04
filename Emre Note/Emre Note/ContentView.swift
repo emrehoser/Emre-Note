@@ -9,70 +9,57 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    
+    @EnvironmentObject var dateHolder: DateHolder
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            VStack(spacing: 1){
+                DateScrollerView()
+                    .environmentObject(dateHolder)
+                    .padding()
+                dayOfWeekStack
+                calendarGrid
             }
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    
+    var dayOfWeekStack: some View {
+        HStack(spacing: 1) {
+            Text("Sun").dayOfWeek()
+            Text("Mon").dayOfWeek()
+            Text("Tue").dayOfWeek()
+            Text("Wed").dayOfWeek()
+            Text("Thu").dayOfWeek()
+            Text("Fri").dayOfWeek()
+            Text("Sat").dayOfWeek()
+        }
+    }
+    
+    var calendarGrid: some View {
+        VStack(spacing: 1) {
+            
+            let daysInMonth = CalenderHelper().daysInMonth(dateHolder.date)
+            let firstDayOfMonth = CalenderHelper().firstOfMonth(dateHolder.date)
+            let startingSpaces = CalenderHelper().weekDay(firstDayOfMonth)
+            let prevMonth = CalenderHelper().minusMonth(dateHolder.date)
+            let daysInPrevMonth = CalenderHelper().daysInMonth(prevMonth)
+            
+            ForEach(0..<6) {
+                row in
+                HStack(spacing: 1) {
+                    ForEach(1..<8) {
+                        column in
+                        let count = column + (row * 7)
+                        NavigationLink(destination: NoteView()) {
+                            CalendarCell(count: count, startingSpaces: startingSpaces, daysInMonth: daysInMonth, daysInPrevMonth: daysInPrevMonth)
+                                .environmentObject(dateHolder)
+                        }
+                    }
+                }
             }
         }
+        .frame(maxHeight: .infinity)
     }
 }
 
@@ -85,6 +72,14 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+    }
+}
+
+extension Text {
+    func dayOfWeek() -> some View {
+        self.frame(maxWidth: .infinity)
+            .padding(.top, 1)
+            .lineLimit(1)
     }
 }
